@@ -1,0 +1,4 @@
+[[d1_databases]]
+binding = "DB" # i.e. available in your Worker on env.DB
+database_name = "pi-ip"
+database_id = "259b6c53-f09d-4d38-9d32-abb352d0691e"

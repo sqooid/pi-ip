@@ -10,6 +10,9 @@ dependencies:
     version: 2.0.0
 
 devDependencies:
+  '@cloudflare/workers-types':
+    specifier: ^4.20240729.0
+    version: 4.20240729.0
   '@skeletonlabs/skeleton':
     specifier: 2.10.2
     version: 2.10.2(svelte@4.2.18)
@@ -923,7 +926,7 @@ packages:
       '@sveltejs/kit': 2.5.19(@sveltejs/vite-plugin-svelte@3.1.1)(svelte@4.2.18)(vite@5.3.5)
       esbuild: 0.21.5
       worktop: 0.8.0-next.18
-      wrangler: 3.68.0
+      wrangler: 3.68.0(@cloudflare/workers-types@4.20240729.0)
     dev: true
 
   /@sveltejs/adapter-vercel@5.4.1(@sveltejs/kit@2.5.19):
@@ -3544,7 +3547,7 @@ packages:
       regexparam: 3.0.0
     dev: true
 
-  /wrangler@3.68.0:
+  /wrangler@3.68.0(@cloudflare/workers-types@4.20240729.0):
     resolution: {integrity: sha512-gsIeglkh5nOn1mHJs0bf1pOq/DvIt+umjO/5a867IYYXaN4j/ar5cRR1+F5ue3S7uEjYCLIZZjs8ESiPTSEt+Q==}
     engines: {node: '>=16.17.0'}
     hasBin: true
@@ -3555,6 +3558,7 @@ packages:
         optional: true
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.4
+      '@cloudflare/workers-types': 4.20240729.0
       '@esbuild-plugins/node-globals-polyfill': 0.2.3(esbuild@0.17.19)
       '@esbuild-plugins/node-modules-polyfill': 0.2.2(esbuild@0.17.19)
       blake3-wasm: 2.1.5

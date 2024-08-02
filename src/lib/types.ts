@@ -1,4 +1,5 @@
 export type Entry = {
+	hostname: string;
 	ip: string;
 	time: number;
 };

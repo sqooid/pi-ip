@@ -8,7 +8,7 @@
 
 <div class="flex items-center justify-center w-full">
 	<div class="max-w-prose w-full p-10">
-		{#each data.data as item}
+		{#each data.hosts as item}
 			<button
 				class="card p-4 w-full cursor-pointer flex justify-between items-end"
 				on:click={() => {

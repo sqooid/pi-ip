@@ -5,12 +5,8 @@ declare namespace App {
 	// interface Locals {}
 	interface Platform {
 		env: {
-			COUNTER: DurableObjectNamespace;
+			DB: D1Database;
 		};
-		context: {
-			waitUntil(promise: Promise<any>): void;
-		};
-		caches: CacheStorage & { default: Cache };
 	}
 	// interface PageData {}
 	// interface Error {}
