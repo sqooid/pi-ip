@@ -1,15 +1,31 @@
-<!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
+<script lang="ts">
+	import type { PageData } from './$types';
+	import { getToastStore } from '@skeletonlabs/skeleton';
 
-<div class="container h-full mx-auto flex justify-center items-center">
-	<div class="space-y-5">
-		<h1 class="h1">Let's get cracking bones!</h1>
-		<p>Start by exploring:</p>
-		<ul>
-			<li><code class="code">/src/routes/+layout.svelte</code> - barebones layout</li>
-			<li><code class="code">/src/app.postcss</code> - app wide css</li>
-			<li>
-				<code class="code">/src/routes/+page.svelte</code> - this page, you can replace the contents
-			</li>
-		</ul>
+	export let data: PageData;
+	const toastStore = getToastStore();
+</script>
+
+<div class="flex items-center justify-center w-full">
+	<div class="max-w-prose w-full p-10">
+		{#each data.data as item}
+			<button
+				class="card p-4 w-full cursor-pointer flex justify-between items-end"
+				on:click={() => {
+					navigator.clipboard.writeText(item.ip.toString());
+					toastStore.trigger({
+						message: 'Copied',
+						timeout: 2000,
+						hideDismiss: true
+					});
+				}}
+			>
+				<div class="flex gap-4 items-end">
+					<span class="h2 opacity-50">{item.hostname}</span>
+					<span class="h3">{item.ip}</span>
+				</div>
+				<div><span class="h6">{new Date(item.time).toLocaleString()}</span></div>
+			</button>
+		{/each}
 	</div>
 </div>
