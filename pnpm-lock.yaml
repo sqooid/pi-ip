@@ -23,8 +23,8 @@ devDependencies:
     specifier: ^3.0.0
     version: 3.2.2(@sveltejs/kit@2.5.19)
   '@sveltejs/adapter-cloudflare':
-    specifier: ^4.7.0
-    version: 4.7.0(@sveltejs/kit@2.5.19)(wrangler@3.68.0)
+    specifier: 4.6.1
+    version: 4.6.1(@sveltejs/kit@2.5.19)(wrangler@3.68.0)
   '@sveltejs/adapter-vercel':
     specifier: ^5.4.1
     version: 5.4.1(@sveltejs/kit@2.5.19)
@@ -916,8 +916,8 @@ packages:
       import-meta-resolve: 4.1.0
     dev: true
 
-  /@sveltejs/adapter-cloudflare@4.7.0(@sveltejs/kit@2.5.19)(wrangler@3.68.0):
-    resolution: {integrity: sha512-8K2Bw7ykLfIypqFZ8CvNsi0vvM9iWyWsuCGcuTwW6Z7FF+EJNe3V5UJwdXlz20AvdPRZ00S/0XF6Ns3iwBWcfw==}
+  /@sveltejs/adapter-cloudflare@4.6.1(@sveltejs/kit@2.5.19)(wrangler@3.68.0):
+    resolution: {integrity: sha512-wENN4un6VC7kWLXyIcPX1VPpjyTxGEenEcaLsLCci0fuLZRT0Gsx+g0eV1k1IA+NznKkxd06XxfcqY2xhYDu/A==}
     peerDependencies:
       '@sveltejs/kit': ^2.0.0
       wrangler: ^3.28.4
