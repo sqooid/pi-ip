@@ -1,8 +1,15 @@
 import type { Entry } from './types';
 
 export const getAllEntries = async (platform: App.Platform): Promise<Entry[]> => {
-	const { results } = await platform.env.DB.prepare('select * from hosts').all();
-	return results;
+	try {
+		const { results } = await platform.env.DB.prepare('select * from hosts').all();
+		return results;
+	} catch (error) {
+		await platform.env.DB.prepare(
+			'create table if not exists hosts (hostname text primary key, ip text, updated integer)'
+		).run();
+		return [];
+	}
 };
 
 export const setEntry = async (platform: App.Platform, entry: Entry) => {

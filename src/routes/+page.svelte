@@ -24,7 +24,7 @@
 					<span class="h2 opacity-50">{item.hostname}</span>
 					<span class="h3">{item.ip}</span>
 				</div>
-				<div><span class="h6">{new Date(item.time).toLocaleString()}</span></div>
+				<div><span class="h6">{new Date(item.updated).toLocaleString()}</span></div>
 			</button>
 		{/each}
 	</div>
