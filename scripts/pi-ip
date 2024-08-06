@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ "$reason" in BOUND|RENEW ]; then
+curl --header "Content-Type: application/json" \
+--request POST \
+--data "{\"hostname\":\"$new_host_name\",\"ip\":\"$new_ip_address\"}" \
+https://pi-ip.pages.dev
+fi
