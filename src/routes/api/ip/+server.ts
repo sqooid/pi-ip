@@ -1,20 +1,12 @@
 import { json } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
-import { kv } from '@vercel/kv';
-import { KV_PREFIX, type Entry } from '$lib/types';
+import type { Entry } from '$lib/types';
+import { setEntry } from '$lib/db';
 
 export const POST: RequestHandler = async (event) => {
 	const { ip, hostname } = await event.request.json();
 	const time = Date.now();
-	const entry: Entry = { ip, updated: time };
-	await kv.set(`${KV_PREFIX}:${hostname}`, JSON.stringify(entry));
-	return json(entry);
-};
-
-export const GET: RequestHandler = async (event) => {
-	const { ip, hostname } = await event.request.json();
-	const time = Date.now();
-	const entry: Entry = { ip, updated: time };
-	kv.set(hostname, JSON.stringify(entry));
+	const entry: Entry = { hostname, ip, updated: time };
+	await setEntry(event.platform!, entry);
 	return json(entry);
 };
